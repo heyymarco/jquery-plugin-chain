@@ -1,16 +1,21 @@
-import $ from "jquery";
+export default function makePlugin($ : JQueryStatic | null) : JQueryStatic | null {
+    if($ && (typeof $ == "function")) {
+        $.prototype.chain = function(
+                this: JQuery<HTMLElement>,
+                handler :   null |
+                            ((this: JQuery<HTMLElement>) => (JQuery<HTMLElement> | HTMLElement | null))
+            ) : JQuery<HTMLElement> {
 
+            return $(handler ? (handler!.call(this) || this) : this);
+        }
 
-(function($){
-    $.prototype.chain = function(
-            this: JQuery<HTMLElement>,
-            handler :   null |
-                        ((this: JQuery<HTMLElement>) => (JQuery<HTMLElement> | HTMLElement | null))
-        ) : JQuery<HTMLElement> {
-
-        return $(handler ? (handler!.call(this) || this) : this);
+        return $;
     }
-}($));
+
+    return null;
+}
+
+if (jQuery) makePlugin(jQuery!);
 
 
 

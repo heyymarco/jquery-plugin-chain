@@ -1,6 +1,6 @@
 {
   "name": "jquery-plugin-chain",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A jQuery plugin for simplifying chain operation",
   "main": "index.js",
   "scripts": {
@@ -23,7 +23,6 @@
   },
   "homepage": "https://github.com/heyymarco/jquery-plugin-chain#readme",
   "dependencies": {
-    "@types/jquery": "^3.5.4",
-    "jquery": "^3.5.1"
+    "@types/jquery": "^3.5.4"
   }
 }
