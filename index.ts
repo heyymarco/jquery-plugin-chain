@@ -1,22 +1,21 @@
-export default function makePlugin($ : JQueryStatic | JQuery<any>) : JQueryStatic | null {
-    if($ && (typeof $ == "function")) {
-        $.prototype.chain = function(
-                this: JQuery<HTMLElement>,
-                handler :   null |
-                            ((this: JQuery<HTMLElement>) => (JQuery<HTMLElement> | HTMLElement | null))
-            ) : JQuery<HTMLElement> {
+import $ from "jquery";
 
-            return $(handler ? (handler!.call(this) || this) : this);
+
+$.prototype.chain = function<This extends JQuery<HTMLElement>>(
+        this: This,
+        handler :   null |
+                    ((this: This) => (This | JQuery<HTMLElement> | HTMLElement | null | void))
+    ) : This | JQuery<HTMLElement> {
+
+    if (handler) {
+        let result = handler.call(this);
+        if (result) {
+            if (result === this) return this;
+            return $(result);
         }
-
-        return $;
     }
-
-    return null;
+    return this;
 }
-
-if (typeof jQuery == "function") makePlugin(jQuery!);
-
 
 
 declare global {
@@ -30,10 +29,10 @@ declare global {
          *    return divOnly ? this.filter("div") : this; 
          * })
          */
-        chain(
-                this: JQuery<HTMLElement>,
+        chain<This extends JQuery<HTMLElement>>(
+                this: This,
                 handler :   null |
-                            ((this: JQuery<HTMLElement>) => (JQuery<HTMLElement> | HTMLElement | null))
-            ) : JQuery<HTMLElement>
+                            ((this: This) => (This | JQuery<HTMLElement> | HTMLElement | null | void))
+            ) : This | JQuery<HTMLElement>
     }
 }

@@ -14,9 +14,8 @@ npm install jquery-plugin-chain --save
 
 ```js
 import $ from "jquery";
-import jqueryChain from "jquery-plugin-chain";
+import "jquery-plugin-chain";
 
-jqueryChain($);
 
 $(".something, .someone")
 .css({
@@ -40,9 +39,8 @@ $(".something, .someone")
 
 ```ts
 import $ from "jquery";
-import jqueryChain from "jquery-plugin-chain";
+import "jquery-plugin-chain";
 
-jqueryChain($);
 
 $(".something, .someone")
 .css({
