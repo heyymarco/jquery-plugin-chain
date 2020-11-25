@@ -1,0 +1,21 @@
+{
+  "name": "jquery-plugin-chain",
+  "version": "1.0.0",
+  "description": "A jQuery plugin for simplifying chain operation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "jquery",
+    "plugin",
+    "jquery-plugin",
+    "chain"
+  ],
+  "author": "HeyMarco",
+  "license": "ISC",
+  "dependencies": {
+    "@types/jquery": "^3.5.4",
+    "jquery": "^3.5.1"
+  }
+}
