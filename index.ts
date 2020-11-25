@@ -15,7 +15,7 @@ export default function makePlugin($ : JQueryStatic | null) : JQueryStatic | nul
     return null;
 }
 
-if (jQuery) makePlugin(jQuery!);
+if (typeof jQuery == "function") makePlugin(jQuery!);
 
 
 

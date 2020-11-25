@@ -10,5 +10,5 @@ function makePlugin($) {
     return null;
 }
 exports.default = makePlugin;
-if (jQuery)
+if (typeof jQuery == "function")
     makePlugin(jQuery);
