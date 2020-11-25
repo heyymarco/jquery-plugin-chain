@@ -1,6 +1,6 @@
 {
   "name": "jquery-plugin-chain",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A jQuery plugin for simplifying chain operation",
   "main": "index.js",
   "scripts": {
