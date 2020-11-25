@@ -6,14 +6,22 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heyymarco/jquery-plugin-chain.git"
+  },
   "keywords": [
     "jquery",
     "plugin",
     "jquery-plugin",
     "chain"
   ],
-  "author": "HeyMarco",
+  "author": "HeyMarco (https://heymarco.me)",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heyymarco/jquery-plugin-chain/issues"
+  },
+  "homepage": "https://github.com/heyymarco/jquery-plugin-chain#readme",
   "dependencies": {
     "@types/jquery": "^3.5.4",
     "jquery": "^3.5.1"
