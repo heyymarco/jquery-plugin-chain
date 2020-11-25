@@ -1,4 +1,4 @@
-export default function makePlugin($ : JQueryStatic | null) : JQueryStatic | null {
+export default function makePlugin($ : JQueryStatic | JQuery<any>) : JQueryStatic | null {
     if($ && (typeof $ == "function")) {
         $.prototype.chain = function(
                 this: JQuery<HTMLElement>,
